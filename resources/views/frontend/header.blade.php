@@ -31,21 +31,22 @@
                          <?php 
                                 $sub_menu = \DB::table('menus')->where('parent_id', $menu->id)->orderby('order', 'asc')->get();
                         ?>
-                        @if($slug != '')
-                            <li class="<?php if($menu->url == $slug){ echo 'active';}?> <?php if($sub_menu){ echo 'dropdown';}?>">
-                              @else
-                            <li>
-                        @endif      
-                              <a href="@if($menu->url != '#' || $menu->url != '' ){{ URL::to('/'.$menu->url) }} @else {{ 'javascript:;' }}@endif"><span class="link_text">{{ $menu->title }}</span></a>
-                              
-                                  @if($sub_menu)
-                                  <ul class="dropdown-menu <?php if($menu->url == $slug){ echo 'nav-active';}?>">
+                        @if(count($sub_menu) > 0)
+                          <li class="dropdown <?php if($menu->url == $slug){ echo 'active';}?>">
+                               <a href="@if($menu->url != '#' ){{ URL::to('/'.$menu->url) }} @else {{'javascript:;'}}@endif">{{ $menu->title }} <em class="caret-wrap" style="z-index:99999;"><span class="caret"></span></em></a>
+
+                               <ul class="dropdown-menu">
                                     @foreach($sub_menu as $s_menu)
                                       <li><a href="{{URL::to('/'.$s_menu->url)}}"><span class="link_text">{{$s_menu->title}}</span></a></li>
                                     @endforeach 
                                   </ul>
-                                  @endif
-                            </li>
+                        @else
+                        <li class="<?php if($menu->url == $slug){ echo 'active';}?> ">
+                          <a href="@if($menu->url != '#' ){{ URL::to('/'.$menu->url) }} @else {{'javascript:;'}}@endif"><span class="link_text">{{ $menu->title }}</span></a>
+
+                        </li>
+                        @endif
+                    
                        @endforeach
                     @endif
                   </ul>

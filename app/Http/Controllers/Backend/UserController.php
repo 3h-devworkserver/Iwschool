@@ -71,12 +71,22 @@ class UserController extends Controller
         else
         {
             $request = Request::all();
+            if(Request::hasFile('upload'))
+        {
+        $file = Request::file('upload');
+        $destinationPath = public_path(). '/img/user/';
+        $filename = $file->getClientOriginalName();
+        $file->move($destinationPath, $filename);
 
+        }else{
+        $filename = '';
+        }
                 User::create([
                         'name' => $request['name'],
                         'email' => $request['email'],
                         'password' => Hash::make($request['password']),
                         'remember_token' => $request['_token'],
+                        'image' => $filename,
                         ]);
             return Redirect::to('admin/user/list');
 
@@ -119,6 +129,32 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+            $request = Request::all();
+              $imgname = User::findOrFail($id);
+               if(Request::hasFile('upload'))
+                {
+                    $file = Request::file('upload');
+                    $destinationPath = public_path(). '/img/user/';
+                    $filename = $file->getClientOriginalName();
+                    $file->move($destinationPath, $filename);
+                }
+                else
+                {
+                    if(!empty($imgname->image)){
+                        $filename = $imgname->image;
+                    }
+                }
+                
+               User::where('id',$id)->update([
+                        'name' => $request['name'],
+                        'email' => $request['email'],
+                        'remember_token' => $request['_token'],
+                        'image' => $filename,
+                ]);
+
+             
+             
+            return redirect('admin/user/list');
     }
 
     /**
@@ -130,5 +166,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        DB::table('users')->where('id', '=', $id)->delete();
+        return Redirect::to('admin/user/list');
     }
 }

@@ -89,7 +89,6 @@ strong{
 
 button.btn{
   border: none;
-  background: #F6803A;
   color: #ffffff;
 }
 
@@ -320,6 +319,7 @@ header{
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-top: medium none;
+  box-shadow: none;
   color: #6a7f84;
   font-family: "latoregular" sans-serif;
   left: 0;
@@ -328,7 +328,7 @@ header{
   right: 0;
   top: 100%;
   text-transform: uppercase;
-  width: 220px;
+  width: 210px;
 }
 
 .main-header .collapse.navbar-collapse ul ul.dropdown-menu li{
@@ -357,7 +357,7 @@ header{
   padding-bottom: 5px;
 }
 
-i.box{
+.main-header .collapse.navbar-collapse .caret{
   display: none;
 }
 
@@ -497,7 +497,7 @@ section.page-banner {
 }
 
 .top-space {
-  margin-top: 90px;
+  margin-top: 80px;
 }
 
 /* .home .courses_offer.top-space{
@@ -840,15 +840,15 @@ footer .footer-content .footer-button a{
   margin-right: 55px;
 }
 
-footer .footer-content .broucher{
+footer .footer-content .footer-button .broucher{
   background: transparent url("../images/download%20brochure-1.png") no-repeat scroll left top / contain 
 }
 
-footer .footer-content .form{
+footer .footer-content .footer-button .form{
   background: transparent url("../images/download%20form-1.png") no-repeat scroll left top / contain ;
 }
 
-footer .footer-content a:hover{
+footer .footer-content .footer-button a:hover{
   background: transparent url("../images/download%20brochure-2.png") no-repeat scroll left top / contain ;
 }
 

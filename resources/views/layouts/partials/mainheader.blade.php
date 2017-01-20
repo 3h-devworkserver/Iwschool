@@ -15,6 +15,7 @@
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">{{ trans('adminlte_lang::message.togglenav') }}</span>
         </a>
+
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
@@ -27,11 +28,16 @@
                     <li><a href="{{ url('/login') }}">{{ trans('adminlte_lang::message.login') }}</a></li>
                 @else
                     <!-- User Account Menu -->
+                    <li>
+                        <a href="{{ URL::to("") }}" class="" target="_blank"><i class="fa fa-eye"></i> &nbsp; View site</a>
+                    </li>
                     <li class="dropdown user user-menu">
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="{{asset('/img/user2-160x160.jpg')}}" class="user-image" alt="User Image"/>
+                             @if(!empty( Auth::user()->image) )
+                            <img src="{{asset('/img/user/'. Auth::user()->image)}}" class="user-image" alt="User Image"/>
+                            @endif
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">{{ Auth::user()->name }}</span>
                         </a>

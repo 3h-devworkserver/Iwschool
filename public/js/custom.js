@@ -279,10 +279,6 @@ function readURL(input, id) {
         var reader = new FileReader();
 
         reader.onload = function(e) {
-            // $('.bg-img')
-            //     .attr('src', e.target.result)
-            //     .width(150)
-            //     .height(200);
             if (id == '') {
                 $('.bg-img').css('background-image', 'url(' + e.target.result + ')')
                 $('.bg-img').addClass('slider-image')
@@ -295,7 +291,6 @@ function readURL(input, id) {
                         'min-height': '250px',
                         'background-position': 'center'
                     })
-                    // $('.inner-wrap.second #bgimg'+id).addClass('slider-image')
             }
         };
 

@@ -65,6 +65,7 @@
     <link href="https://fonts.googleapis.com/css?family=Arimo|Lato:300,400" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/bootstrap.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/jquery.smartmenus.bootstrap.css') }}"> -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/jquery.fancybox.min.css') }}">
     <!-- <link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/effects.min.css') }}" /> -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/assets/fonts/stylesheet.css') }}" />
@@ -75,6 +76,8 @@
     <script type="text/javascript" src="{{ asset('/assets/js/jquery-1.9.1.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/assets/js/TweenMax.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/assets/js/bootstrap.min.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ asset('/assets/js/smartmenu.js') }}"></script> -->
+    <!--  <script type="text/javascript" src="{{ asset('/assets/js/jquery.smartmenus.bootstrap.js') }}"></script> -->
 
     <script type="text/javascript">
         $(document).ready(function() { 
@@ -82,6 +85,7 @@
             win = (win < 79) ? 557 : win;
             $('#myCarousel').height(win);
         }); 
+       
     </script>
 </head>
 

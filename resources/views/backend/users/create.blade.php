@@ -49,6 +49,27 @@ Home
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="col-md-3">
+					<div class="box box-default">
+						<div class="box-header with-border">
+						<h3 class="box-title">
+							Upload profile Image
+							<!-- {!! Form::label('file','Upload Featured Image',array('class'=>'control-lable')) !!} -->
+						</h3>
+						<div class="box-tools pull-right">
+						<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-angle-up"></i></button>
+						</div><!-- /.box-tools -->
+						</div><!-- /.box-header -->
+						<div class="box-body upload-block">
+							<span class="btn btn-default btn-file">
+								<i class="fa fa-folder-open"></i>Browse Image 
+								<input type='file' onchange="readURL(this,'');" name="upload" id="upload" />
+							</span>
+  							
+							<div class="bg-img"></div>
+						</div>
+					</div>
 			<div class="text-right">
 				{!! Form::submit('Submit',array('class' => 'btn btn-primary')) !!}
 			</div>

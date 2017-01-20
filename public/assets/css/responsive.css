@@ -159,24 +159,11 @@
       padding-right: 15px;
     }
 
-    i.box {
-      cursor: pointer;
-      display: block;
-      float: right;
-      height: 30px;
-      line-height: 30px;
-      position: absolute;
-      right: 0;
-      text-align: center;
-      top: 0;
-      width: 30px;
-      z-index: 9999;
-    }
-
-    .box b.caret {
+    .main-header .collapse.navbar-collapse span.caret {
       position: absolute;
       right: 5px;
       top: 13px;
+      display: block;
     }
 
     header .col-md-2.col-sm-2.header-social-icon {
@@ -307,24 +294,12 @@
       padding-left: 0;
     }
 
-    i.box {
-      cursor: pointer;
-      display: block;
-      float: right;
-      height: 30px;
-      line-height: 30px;
-      position: absolute;
-      right: 0;
-      text-align: center;
-      top: 0;
-      width: 30px;
-    }
-
-    .box b.caret {
+   .main-header .collapse.navbar-collapse span.caret {
       position: absolute;
       right: 3px;
       top: 13px;
       z-index: 1;
+      display: block;
     }
 
     .navbar-nav > li > a{
@@ -409,6 +384,12 @@
       z-index: 999;
     }
 
+
+
+    .main-header .collapse.navbar-collapse ul{
+      background: #00737d;
+    }
+
     .main-header .container-fluid{
       padding-left: 15px;
       padding-right: 15px;
@@ -468,8 +449,24 @@
     .main-header .navbar-default .navbar-toggle:focus{
       background: #00737d none repeat scroll 0 0;
       border: medium none;
+      display: block;
       margin: 6px 0 0;
       padding: 11px 12px;
+    }
+
+    .main-header .navbar-default .navbar-collapse em.caret-wrap {
+      height: 50px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50px;
+    }
+
+    .main-header .navbar-default .navbar-collapse span.caret{
+      display: block;
+      position: absolute;
+      right: 15px;
+      top: 22px;
     }
 
     .main-header .navbar-collapse.pull-top{
@@ -510,10 +507,12 @@
     }
     .main-header .navbar-collapse.pull-top{
       padding-right: 15px;
+      background: #00737d;
     }
 
     .main-header .collapse.navbar-collapse ul ul.dropdown-menu{
       position: relative;
+      width: 100%;
     }
 
     .main-header .collapse.navbar-collapse ul li:hover > ul.dropdown-menu{
@@ -527,18 +526,22 @@
       width: 100%;
     }
 
-    i.box {
-      cursor: pointer;
-      display: block;
-      float: right;
-      height: 48px;
-      line-height: 48px;
-      position: absolute;
-      right: 0;
-      text-align: center;
-      top: 11px;
-      width: 48px;
-      z-index: 9999;
+    .navbar-default .navbar-nav > .active > a, 
+    .navbar-default .navbar-nav > .active > a:focus, 
+    .navbar-default .navbar-nav > .active > a:hover{
+      background: transparent none repeat scroll 0 0;
+    }
+
+    .nav > li > a:focus, .nav > li > a:hover{
+      background: none;
+    }
+
+    .navbar-nav > li > a:hover, .navbar-nav > li > a:focus{
+      background: none;
+    }
+
+    .nav > li > a:focus, .nav > li > a:hover{
+      background: none;
     }
 
     .top-header .header-social-icon{

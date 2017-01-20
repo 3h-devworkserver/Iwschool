@@ -15,6 +15,10 @@
 	background-position: center center;
 	
 }
+#userimg{
+  min-height:250px;
+  margin-top: 10px;
+}
 .featured-img,
 .header-img{
   min-height: 200px;
